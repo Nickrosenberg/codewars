@@ -30,7 +30,7 @@
 // oper(vert_mirror, s) => "dcba\nhgfe\nlkji\nponm"
 // oper(hor_mirror, s) => "mnop\nijkl\nefgh\nabcd"
 
-unction vertMirror(strng) {
+function vertMirror(strng) {
     // Split the string into lines, reverse each line, and join them back with new lines
     return strng.split('\n').map(line => line.split('').reverse().join('')).join('\n');
 }
