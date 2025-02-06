@@ -56,32 +56,3 @@ function chooseMove(state) {
 
 // Example usage:
 console.log(chooseMove([3, 4, 5])); // Example output: [0, 2]
-27 seconds agoRefactorDiscuss
-6 kyu
-Transform To Prime
-C++:
-#include <vector>
-#include <numeric>
-
-using namespace std;
-
-bool isPrime(int n) {
-    if (n <= 1) return false;
-    for (int i = 2; i * i <= n; i++) {
-        if (n % i == 0) return false;
-    }
-    return true;
-}
-
-int nextPrime(int n) {
-    while (!isPrime(n)) {
-        n++;
-    }
-    return n;
-}
-
-int minimumNumber(vector<int> numbers) {
-    int sum = accumulate(numbers.begin(), numbers.end(), 0);
-    int prime = nextPrime(sum);
-    return prime - sum;
-}
